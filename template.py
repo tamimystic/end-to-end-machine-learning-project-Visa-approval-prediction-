@@ -40,14 +40,14 @@ file_list = [
 
 
 for filepath in file_list:
-    filepath = Path(filepath)
-    filedir, filename = os.path.split(filepath)
+    filepath = Path(filepath) #for windows, mac, linux or any other device path auto detect, if it is forward slash or backward slash
+    filedir, filename = os.path.split(filepath) #divide folder and file,
 
-    if filedir!= "":
-        os.makedirs(filedir, exist_ok=True)
+    if filedir!= "": #if folder not empty,that means filedir is folder
+        os.makedirs(filedir, exist_ok=True) #if folder don't exits, then make this, and if exits make folder
     
-    if (not os.path.exists(filepath)) or (os.path.getsize(filepath)==0):
-        with open(filepath, 'w') as f:
+    if (not os.path.exists(filepath)) or (os.path.getsize(filepath)==0): #if file-path not exits or file size is 0 
+        with open(filepath, 'w') as f: #create file
             pass
 
     else:
