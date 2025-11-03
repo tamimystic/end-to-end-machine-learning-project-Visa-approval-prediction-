@@ -6,7 +6,7 @@ from datetime import datetime
 
 LOG_FILE= f"{datetime.now().strftime('%d_%m_%Y_%H_%M_%S')}.log"
 
-log_dir="log_info"
+log_dir="logging_info"
 
 logs_folder=os.path.join(from_root(),log_dir)
 os.makedirs(logs_folder,exist_ok=True)
